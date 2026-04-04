@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: sofle}
 layers:
-  default: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', DELETE, ESC, Q, W, E, R, T, Y, U, I, O, P, BSPC, TAB, A, S, D, F, G, H, J, K, L, ;, '''', LSHFT,
+  default: [ESC, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', TAB, Q, W, E, R, T, Y, U, I, O, P, BSPC, LSHFT, A, S, D, F, G, H, J, K, L, ;, '''', LCTRL,
     Z, X, C, V, B, MUTE, '', N, M, ',', ., /, \, LGUI, LALT, LCTRL, lower, SPACE, RET, raise, '[', ']', '=']
   lower:
   - '&studio_unlock'
@@ -75,7 +75,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - DELETE
   - {t: ▽, type: trans}
   - INS
   - PSCRN
@@ -87,7 +87,7 @@ layers:
   - UP
   - {t: ▽, type: trans}
   - '0'
-  - {t: ▽, type: trans}
+  - DELETE
   - {t: ▽, type: trans}
   - LALT
   - LCTRL
