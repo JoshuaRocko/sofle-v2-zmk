@@ -27,6 +27,41 @@
         };
     };
 
+    behaviors {
+        es_enye: es_enye {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp N>
+                , <&macro_release &kp RALT>
+                ;
+        };
+
+        es_enye_upper: es_enye_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_press &kp RALT>
+                , <&macro_tap &kp N>
+                , <&macro_release &kp RALT>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+
+        es_enye_shifted: es_enye_shifted {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&es_enye &es_enye_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -87,7 +122,7 @@
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans    &trans    &trans     &trans   &kp DELETE
 &trans      &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans                          &kp PG_UP  &trans    &kp UP    &trans     &kp N0   &kp DELETE
 &trans      &kp LALT      &kp LCTRL     &kp LSHFT     &trans        &kp CLCK                        &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
+&trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &es_enye_shifted  &trans    &trans    &trans     &trans   &trans
                           &trans        &trans        &trans        &trans        &trans    &trans  &trans     &trans    &trans    &trans
             >;
 
